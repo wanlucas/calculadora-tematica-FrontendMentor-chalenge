@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    background: black;
+}
+
+body[data-theme = "theme-primary"] {
+     --bg-color: hsl(222, 26%, 31%);
+     --font-color: white;
+     --display-color: hsl(224, 36%, 15%);
+     --kb-color: hsl(224, 36%, 15%);
+     --bt1-color:hsl(225, 21%, 49%); 
+     --bt2-color:hsl(6, 63%, 50%);
+     --selector-color: hsl(0, 96%, 38%); 
+     --selector-bg-color: black;
+}
+body[data-theme = "theme-secundary"] {
+     --bg-color: hsl(0, 0%, 90%);
+     --font-color: hsl(0, 0%, 14%);
+     --display-color:   hsl(0, 0%, 93%);
+     --kb-color:  hsl(0, 5%, 81%);
+     --bt1-color: hsl(185, 42%, 37%); 
+     --bt1-shadow-color:;
+     --bt2-color: hsl(25, 98%, 40%);
+     --key-color: hsl(15, 7%, 89%);
+     --selector-color: hsl(26, 79%, 46%); 
+     --selector-bg-color: hsl(0, 0%, 84%);
+}
+body[data-theme = "theme-tertiary"] {
+     --bg-color: hsl(268, 75%, 9%);
+     --font-color: rgb(228, 202, 96);
+     --display-color: hsl(268, 71%, 12%);
+     --kb-color: hsl(268, 71%, 12%);
+     --bt1-color: hsl(281, 89%, 26%); 
+     --bt1-shadow-color: hsl(281, 70%, 57%);
+     --bt2-color:hsl(176, 100%, 44%);
+     --key-color:  hsl(268, 47%, 21%);
+     --bt-shadow-color:  hsl(281, 53%, 42%);
+     --selector-color: hsl(203, 77%, 52%); 
+}
+main {
+   width:78%;
+   height: 100%;
+   background:  var(--bg-color);
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+.calculator {
+    width: 400px;
+    height: 550px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+.header, .themes-box {
+    display: flex;
+    align-items: center;
+}
+.themes-box h2 {
+    padding: 0 6px;
+    margin-top: 5px;
+}
+.themes-box {
+    font-size: 0.36rem;
+}
+.themes-options {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: left;
+    margin-left: 10px;
+    border-radius: 40px;
+    width: 52px;
+    height: 19px;
+    background: var(--selector-bg-color);
+}
+.themes-text {
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.5rem;
+    width: 100%;
+    position: absolute;
+    top: -70%;
+    padding: 0 2px;
+    color: var(--font-color);
+}
+#selector {
+    height: 12px;
+    width: 12px;
+    margin: 0 3px;
+    background: var(--selector-color);
+    border-radius: 50%;
+}
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 100%;
+    height: 17%;
+    background: var(--display-color);
+    padding: 0 5%;
+    border-radius: 8px;
+    margin: 16px 0;
+    font-size: 2.2rem;
+}
+.keyboard {
+    display: grid;
+    grid-template-rows: 5.2fr 1fr;
+    background: var(--kb-color);
+    width: 100%;
+    grid-gap: 18px;
+    height: 65%;
+    border-radius: 8px;
+    padding: 25px;
+}
+.keys {
+    display: grid;
+    grid-gap: 18px; 
+    grid-template-columns: repeat(4, 1fr);
+}
+.keys-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 18px;
+}
+#reset, #delete {
+    color: white;
+    background: var(--bt1-color);
+    border-bottom: solid 3px var(--bt1-shadow-color);
+    font-size: 0.9rem;
+
+}
+#calc {
+    color: white;
+    background:  var(--bt2-color);
+    border-bottom: solid 3px var(--bt2-shadow-color);
+    font-size: 0.9rem;
+}
+
+button {
+    border: none;
+    font-size: 1.4rem;
+    background: var(--key-color); 
+    border-bottom: 3px var(--bt-shadow-color) solid;
+    border-radius: 8px;
+    color: hsla(221, 14%, 31%, 0.9);
+    text-shadow: 1px 1px hsla(219, 6%, 46%, 0.64);
+}
+.attribution {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3vh;  
+}
+.attribution p{
+    margin: 0 2%;
+}
+.attribution a{
+    text-decoration: none;
+    color:  hsl(246, 64%, 77%);
+}
