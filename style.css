@@ -15,46 +15,55 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    font-size: 0.9rem;
+    font-size: 1rem;
     background: black;
 }
 
 body[data-theme = "theme-primary"] {
+     transition: 0.4s;
      --bg-color: hsl(222, 26%, 31%);
      --font-color: white;
+     --font-bt-color: hsl(0, 0%, 29%);
      --display-color: hsl(224, 36%, 15%);
      --kb-color: hsl(224, 36%, 15%);
      --bt1-color:hsl(225, 21%, 49%); 
+     --bt1-shadow-color: hsl(225, 21%, 36%);
      --bt2-color:hsl(6, 63%, 50%);
-     --selector-color: hsl(0, 96%, 38%); 
-     --selector-bg-color: black;
+     --bt2-shadow-color: hsl(6, 62%, 37%);
+     --key-color: hsl(38, 16%, 87%);
+     --bt-shadow-color: hsl(44, 9%, 60%);
 }
 body[data-theme = "theme-secundary"] {
+     transition: 0.4s;
      --bg-color: hsl(0, 0%, 90%);
      --font-color: hsl(0, 0%, 14%);
-     --display-color:   hsl(0, 0%, 93%);
+     --display-color:  hsl(0, 0%, 93%);
      --kb-color:  hsl(0, 5%, 81%);
      --bt1-color: hsl(185, 42%, 37%); 
-     --bt1-shadow-color:;
+     --bt1-shadow-color: hsl(185, 42%, 29%);
      --bt2-color: hsl(25, 98%, 40%);
+     --bt2-shadow-color: hsl(25, 91%, 34%);
      --key-color: hsl(15, 7%, 89%);
-     --selector-color: hsl(26, 79%, 46%); 
-     --selector-bg-color: hsl(0, 0%, 84%);
+     --bt-shadow-color: hsl(39, 11%, 64%);
+     --font3-color: white;
 }
 body[data-theme = "theme-tertiary"] {
+     transition: 0.4s;
      --bg-color: hsl(268, 75%, 9%);
      --font-color: rgb(228, 202, 96);
+     --font-bt-color: rgb(228, 202, 96);
      --display-color: hsl(268, 71%, 12%);
      --kb-color: hsl(268, 71%, 12%);
      --bt1-color: hsl(281, 89%, 26%); 
-     --bt1-shadow-color: hsl(281, 70%, 57%);
+     --bt1-shadow-color: hsl(281, 61%, 49%);
      --bt2-color:hsl(176, 100%, 44%);
      --key-color:  hsl(268, 47%, 21%);
-     --bt-shadow-color:  hsl(281, 53%, 42%);
-     --selector-color: hsl(203, 77%, 52%); 
+     --bt-shadow-color: hsl(299, 44%, 41%);
+     --font3-color: black;
 }
 main {
    width:78%;
+   min-width: 300px;
    height: 100%;
    background:  var(--bg-color);
    display: flex;
@@ -91,7 +100,8 @@ main {
     border-radius: 40px;
     width: 52px;
     height: 19px;
-    background: var(--selector-bg-color);
+    background: var(--kb-color);
+    cursor: pointer;
 }
 .themes-text {
     display: flex;
@@ -107,7 +117,7 @@ main {
     height: 12px;
     width: 12px;
     margin: 0 3px;
-    background: var(--selector-color);
+    background: var(--bt2-color);
     border-radius: 50%;
 }
 .display {
@@ -115,7 +125,7 @@ main {
     align-items: center;
     justify-content: right;
     width: 100%;
-    height: 17%;
+    height: 18%;
     background: var(--display-color);
     padding: 0 5%;
     border-radius: 8px;
@@ -130,7 +140,7 @@ main {
     grid-gap: 18px;
     height: 65%;
     border-radius: 8px;
-    padding: 25px;
+    padding: 22px;
 }
 .keys {
     display: grid;
@@ -151,6 +161,7 @@ main {
 }
 #calc {
     color: white;
+    color: var(--font3-color);
     background:  var(--bt2-color);
     border-bottom: solid 3px var(--bt2-shadow-color);
     font-size: 0.9rem;
@@ -162,7 +173,7 @@ button {
     background: var(--key-color); 
     border-bottom: 3px var(--bt-shadow-color) solid;
     border-radius: 8px;
-    color: hsla(221, 14%, 31%, 0.9);
+    color: var(--font-bt-color);
     text-shadow: 1px 1px hsla(219, 6%, 46%, 0.64);
 }
 .attribution {
@@ -182,3 +193,20 @@ button {
     text-decoration: none;
     color:  hsl(246, 64%, 77%);
 }
+@media only screen and (max-width: 1300px) {
+    main {
+        width: 100%;
+        padding: 20px;
+    }
+    .calculator {
+        width: 60%;
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .calculator {
+        width: 100%;
+        height: 100%;
+    }
+  }
