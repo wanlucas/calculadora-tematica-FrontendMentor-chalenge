@@ -176,6 +176,12 @@ button {
     color: var(--font-bt-color);
     text-shadow: 1px 1px hsla(219, 6%, 46%, 0.64);
 }
+button:hover {
+    filter:brightness(1.1);
+}
+button:active {
+    transform: scale(0.9);
+}
 .attribution {
     position: fixed;
     display: flex;
