@@ -172,7 +172,7 @@ button {
     font-size: 1.4rem;
     background: var(--key-color); 
     border-bottom: 3px var(--bt-shadow-color) solid;
-    border-radius: 8px;
+    border-radius: 10px;
     color: var(--font-bt-color);
     text-shadow: 1px 1px hsla(219, 6%, 46%, 0.64);
 }

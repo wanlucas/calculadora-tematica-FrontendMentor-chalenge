@@ -27,7 +27,7 @@ function updateTheme(theme) {
 document.querySelectorAll('.key').forEach(key => {
     key.addEventListener('click', ()=>{
         const d = displayHtml, k = key.innerText;
-        if(d.innerText.length > 10 || k == 0) return;
+        if(d.innerText.length > 10 || d.innerText == '0' && k == 0) return;
         if(!/[0-9]/.test(d.innerText.split('').pop()) && !/[0-9]/.test(k)) del();
         d.innerText == '0' ? d.innerText = k : d.innerText += k;
         if(k == 'x') return calc+= '*'; 
