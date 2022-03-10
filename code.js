@@ -32,7 +32,6 @@ document.querySelectorAll('.key').forEach(key => {
         d.innerText == '0' ? d.innerText = k : d.innerText += k;
         if(k == 'x') return calc+= '*'; 
         calc += k;
-        console.log(calc)
     });
 });
 document.querySelector('#reset').addEventListener("click", ()=>{
