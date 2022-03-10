@@ -195,10 +195,10 @@ button:active {
 .attribution p{
     font-size: 0.8rem;
     margin: 0 2%;
+    color:  hsl(8, 55%, 59%);
 }
 .attribution a{
     text-decoration: none;
-    color:  hsl(8, 55%, 59%);
 }
 @media only screen and (max-width: 1300px) {
     main {
