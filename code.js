@@ -46,8 +46,9 @@ function del() {
     displayHtml.innerText = res, calc = res;
 }
 document.querySelector('#calc').onclick = ()=> {
-    res = eval(calc);
-    Number.isInteger(res) ? 0 : res = res.toFixed(2);
+    let res = eval(calc);
+    if(!Number.isInteger(res)) res = res.toFixed(2);
+    if(!isFinite(res)) res = 0;
     displayHtml.innerText = res, calc = res;
 }
 
